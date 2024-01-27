@@ -61,15 +61,25 @@ function sendMessage() {
     case 5:
       atr = trimArray(atr);
       obj.name = atr[0];
-      obj.major = atr[1];
+      obj.major = atr[1].replace(/\s/g, "");
       obj.year = atr[2];
       console.log(obj);
+      getCollegeData();
       break;
   }
 
   currentStep++; // Incrementing currentStep outside the switch statement
 
   document.getElementById("input-text").value = "";
+}
+
+function getCollegeData()
+{
+  fetch(`http://localhost:3000/college/${obj.name}/${obj.major}/${obj.year}`, {
+    method: "GET"
+  })
+  .then(res => res.json())
+  .then(data => console.log(data));
 }
 
 function trimArray(array) {

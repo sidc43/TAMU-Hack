@@ -19,16 +19,19 @@ app.get('/college/:name/:major/:year', async (req, res) => {
     
     for (let i = 0; i < files.length; i++) {
         if (`${name}.json` == files[i]) {
+            let file = JSON.parse(fs.readFileSync(`../database/${name}.json`));
             let resObj = {
-                name,
-                major,
-                year,
+                courses: file["Majors"][major][year]["Courses"],
+                credits: file["Majors"][major]["CredsToGrad"]
             };
+            res.send(resObj);
         }
     }
+
+    res.send(404);
 });
 
 
 app.listen(port, () => {
-    
+    console.log(`Listening on port ${port}`);
 });

@@ -16,6 +16,14 @@ var majorOptions = [
 
 var currentStep = 0;
 
+window.onload = function () {
+  showOptions(
+    "Which university are you from?",
+    universityOptions,
+    "university-options-container"
+  );
+};
+
 function sendMessage() {
   var userInput = document.getElementById("input-text").value;
   if (userInput.trim() === "") return;
@@ -27,40 +35,39 @@ function sendMessage() {
 
   chatMessages.appendChild(userMessage);
 
-  // Handle different steps
   switch (currentStep) {
     case 0:
-      showOptions("Which university are you from?", universityOptions);
-      break;
-    case 1:
       handleUniversitySelection(userInput);
       break;
-    case 2:
-      showOptions("What is your major?", majorOptions);
+    case 1:
+      showOptions(
+        "What is your major?",
+        majorOptions,
+        "major-options-container"
+      );
       break;
-    case 3:
+    case 2:
       handleMajorSelection(userInput);
       break;
-    // Add more cases for additional steps if needed
   }
 
   document.getElementById("input-text").value = "";
 }
 
-function showOptions(message, options) {
+function showOptions(message, options, containerId) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
   advisorMessage.textContent = "Advisor: " + message;
 
-  var optionsContainer = document.createElement("div");
-  optionsContainer.className = "options-container";
+  var optionsContainer = document.getElementById(containerId);
+  optionsContainer.innerHTML = "";
 
   options.forEach(function (option) {
     var optionButton = document.createElement("button");
     optionButton.textContent = option;
     optionButton.onclick = function () {
-      document.getElementById("input-text").value = option; 
+      document.getElementById("input-text").value = option;
       sendMessage();
     };
 
@@ -74,17 +81,19 @@ function showOptions(message, options) {
 }
 
 function handleUniversitySelection(selection) {
-  // You can process the selected university here
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
+  advisorMessage.textContent =
+    "Advisor: Thank you for providing your university information.";
+
   chatMessages.appendChild(advisorMessage);
 
+  showOptions("What is your major?", majorOptions, "major-options-container");
   currentStep++;
 }
 
 function handleMajorSelection(selection) {
-  // You can process the selected major here
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
@@ -93,7 +102,5 @@ function handleMajorSelection(selection) {
 
   chatMessages.appendChild(advisorMessage);
 
-  // Add logic to connect with AdvisorGPT or perform other actions based on user input
-  // For now, let's assume the conversation ends here.
   currentStep++;
 }

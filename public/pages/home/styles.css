@@ -49,3 +49,27 @@ body {
   margin-left: 10px;
   outline: none;
 }
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  background-color: #3159e9;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.user-message {
+  color: #fff;
+}
+
+.advisor-message {
+  color: hsla(213, 100%, 50%, 0.998);
+}

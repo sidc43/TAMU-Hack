@@ -1,5 +1,6 @@
 {
     "Name": "collegename",
+    "Short": "x",
     "Majors": [
         {
             "Major": "Major name",

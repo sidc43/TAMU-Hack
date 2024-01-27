@@ -1,3 +1,7 @@
+let uName;
+let uMajor;
+let uYear;
+
 var universityOptions = [
   "Texas A&M University",
   "UT Arlington",
@@ -56,7 +60,7 @@ function showOptions(message, options) {
     var optionButton = document.createElement("button");
     optionButton.textContent = option;
     optionButton.onclick = function () {
-      document.getElementById("input-text").value = option;
+      document.getElementById("input-text").value = option; 
       sendMessage();
     };
 

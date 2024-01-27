@@ -19,12 +19,12 @@ app.get('/college/:name/:major/:year', async (req, res) => {
     
     for (let i = 0; i < files.length; i++) {
         if (`${name}.json` == files[i]) {
-            
+            let resObj = {
+                name,
+                major,
+                year,
+            };
         }
-    }
-
-    let resObj = {
-
     }
 });
 

@@ -16,7 +16,7 @@ var majorOptions = [
   "Computer Engineering",
   "Software Engineering",
 ];
-var yearOptions = ["Freshman", "Sophmore", "Junior", "Senior"];
+var yearOptions = ["Freshman", "Sophomore", "Junior", "Senior"];
 
 var currentStep = 0;
 
@@ -38,11 +38,10 @@ function sendMessage() {
         universityOptions,
         "university-options-container"
       );
-      console.log(currentStep);
       break;
     case 1:
       handleUniversitySelection(userInput);
-      console.log(currentStep);
+      currentStep++;
       break;
 
     case 2:
@@ -51,22 +50,24 @@ function sendMessage() {
         majorOptions,
         "major-options-container"
       );
-      console.log(currentStep);
       break;
     case 3:
-      handleUniversitySelection(userInput);
-      console.log(currentStep);
+      handleMajorSelection(userInput);
+      currentStep++;
       break;
     case 4:
       showOptions("What is your year?", yearOptions, "year-options-container");
+      break;
+    case 5:
       atr = trimArray(atr);
       obj.name = atr[0];
       obj.major = atr[1];
       obj.year = atr[2];
-      //console.log(obj);
-      console.log(currentStep);
+      console.log(obj);
       break;
   }
+
+  currentStep++; // Incrementing currentStep outside the switch statement
 
   document.getElementById("input-text").value = "";
 }
@@ -102,8 +103,6 @@ function showOptions(message, options, containerId) {
 
   chatMessages.appendChild(advisorMessage);
   chatMessages.appendChild(optionsContainer);
-
-  currentStep++;
 }
 
 function handleUniversitySelection(selection) {
@@ -116,5 +115,16 @@ function handleUniversitySelection(selection) {
   chatMessages.appendChild(advisorMessage);
 
   showOptions("What is your major?", majorOptions, "major-options-container");
-  currentStep++;
+}
+
+function handleMajorSelection(selection) {
+  var chatMessages = document.getElementById("chat-messages");
+  var advisorMessage = document.createElement("div");
+  advisorMessage.className = "advisor-message";
+  advisorMessage.textContent =
+    "Advisor: Thank you for providing your major information.";
+
+  chatMessages.appendChild(advisorMessage);
+
+  showOptions("What is your year?", yearOptions, "year-options-container");
 }

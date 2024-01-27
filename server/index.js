@@ -27,7 +27,6 @@ app.get('/college/:name/:major/:year', async (req, res) => {
             res.send(resObj);
         }
     }
-
     res.send(404);
 });
 

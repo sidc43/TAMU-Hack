@@ -40,7 +40,6 @@ window.onload = function () {
 
 const courseDivStyle = `
   position: relative;
-  overflow: hidden;
   left: 70px;
   background-color: rgba(0, 0, 0, 0.5);
   height: 60px;

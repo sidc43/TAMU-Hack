@@ -15,9 +15,10 @@ body {
 #chat-container {
   overflow: hidden;
   width: 650px;
+  height: 690px;
   max-width: 100%;
   position: absolute;
-  bottom: 80px;
+  bottom: 20px;
 
   background: rgba(255, 255, 255, 0.411);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -69,7 +70,6 @@ button {
   font-family: "Montserrat", sans-serif;
   background-color: hsla(267, 100%, 50%, 0.998);
   color: #fff;
-  margin-right: 20px;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -78,9 +78,24 @@ button {
   font-weight: 200;
 }
 
+#send-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: hsla(267, 100%, 50%, 0.998);
+  position: relative;
+  bottom: -95px;
+  color: #fff;
+  margin-right: 20px;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 200;
+}
+
 #logo {
   position: absolute;
-  bottom: 690px;
+  bottom: 710px;
 }
 
 .user-message {

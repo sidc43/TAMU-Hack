@@ -79,7 +79,10 @@ function getCollegeData()
     method: "GET"
   })
   .then(res => res.json())
-  .then(data => console.log(data));
+  .then(data => {
+
+    console.log(data);
+  });
 }
 
 function trimArray(array) {

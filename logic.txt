@@ -1,0 +1,37 @@
+object Course:
+    courseId = ""
+    course_prerequisites = ""
+
+    function check_pre(major_courses, target_course):
+        target_node = course_prerequisites[target_course]
+
+        function search(prereq):
+            if node in user_courses
+                true   
+
+        for prereq in course_prerequisites
+            if not searc(prerequisite)
+                false
+        
+        
+    return search(target)
+
+
+allow user to drag courses around if they fit prerequisites...
+"selected"
+
+    for course, node in courseNodes...
+        node.prerequisites
+
+    for course, node in coursenodes...
+        for prerequisite in node prerequisites
+            if prerequisute ID in selected
+                add prerequisite to node prerequisites
+
+
+user_made_nodes = {
+
+
+}
+
+idk use an array or something here???

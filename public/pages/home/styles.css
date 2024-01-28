@@ -17,7 +17,8 @@ body {
   width: 650px;
   max-width: 100%;
   position: absolute;
-  bottom: 60px;
+  bottom: 80px;
+
   background: rgba(255, 255, 255, 0.411);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(2px);

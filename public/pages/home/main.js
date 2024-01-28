@@ -40,8 +40,8 @@ window.onload = function () {
 
 const courseDivStyle = `
   position: relative;
+  overflow: hidden;
   left: 70px;
-  bottom: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   height: 60px;
   width: 500px;
@@ -106,14 +106,16 @@ function getCollegeData() {
       // TODO: loop through data, each iteration create a box for each class
       for (let i = 0; i < data["courses"].length; i++) {
         const p = document.createElement("p");
-        const text = document.createTextNode(data["courses"][i]["Course"] + " - " + data["courses"][i]["Desc"]);
+        const text = document.createTextNode(
+          data["courses"][i]["Course"] + " - " + data["courses"][i]["Desc"]
+        );
         p.appendChild(text);
         p.innerHTML += "<br>Credit Hours: " + data["courses"][i]["CredHrs"];
         container.innerHTML += `<div id='div${i}' style="${courseDivStyle}">`;
-        
+
         const div = document.getElementById(`div${i}`);
         div.appendChild(p);
-      } 
+      }
     });
 }
 

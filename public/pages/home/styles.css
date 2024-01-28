@@ -17,8 +17,7 @@ body {
   width: 650px;
   max-width: 100%;
   position: absolute;
-  bottom: 100px;
-
+  bottom: 60px;
   background: rgba(255, 255, 255, 0.411);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(2px);
@@ -46,8 +45,7 @@ body {
   outline: none;
 }
 
-#send-button {
-  background-color: hsla(267, 100%, 50%, 0.998);
+.send-button {
   color: #fff;
   border: none;
   padding: 8px 12px;
@@ -70,6 +68,7 @@ button {
   font-family: "Montserrat", sans-serif;
   background-color: hsla(267, 100%, 50%, 0.998);
   color: #fff;
+  margin-right: 20px;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;

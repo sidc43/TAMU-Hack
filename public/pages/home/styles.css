@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Rubik&display=swap');
 
 body {
-  background-image: url("../../assets/image.png");
-  background-color: #ffffff;
+  background-color: #666666;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -17,6 +16,8 @@ body {
   overflow: hidden;
   width: 650px;
   max-width: 100%;
+  position: absolute;
+  bottom: 100px;
 
   background: rgba(255, 255, 255, 0.411);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -77,12 +78,15 @@ button {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 200;
 }
 
+#logo {
+  position: absolute;
+  bottom: 690px;
+}
+
 .user-message {
-<<<<<<< Updated upstream
   color: #fff;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -94,9 +98,8 @@ button {
 .advisor-message {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
-  color: hsla(213, 100%, 50%, 0.998);
+  color: hsla(267, 100%, 50%, 0.998);
   margin-bottom: 5px;
-=======
   text-align:right;
   font-family: 'Montserrat', sans-serif;
   color: cyan;
@@ -111,10 +114,10 @@ button {
   width: 400px;
   position: relative;
   font-family: 'Montserrat', sans-serif;
+  text-align: left;
 }
 
 #creds {
   position: absolute;
-  ;
->>>>>>> Stashed changes
+  
 }

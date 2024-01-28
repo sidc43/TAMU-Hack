@@ -38,6 +38,11 @@ window.onload = function () {
   currentStep++;
 };
 
+const courseDivStyle = `
+  background-color: black;
+  height: 50px;
+`;
+
 // Update the 'sendMessage' function to include 'handleKeyPress' on 'Enter' key press
 function sendMessage() {
   var userInput = document.getElementById("input-text").value;
@@ -90,7 +95,19 @@ function getCollegeData() {
   })
     .then((res) => res.json())
     .then((data) => {
+      let container = document.getElementById("chat-container");
+      container.innerHTML = "";
       console.log(data);
+      // TODO: loop through data, each iteration create a box for each class
+      for (let i = 0; i < data["courses"].length; i++) {
+        const p = document.createElement("p");
+        const text = document.createTextNode(data["courses"][i]["Course"]);
+        p.appendChild(text);
+        container.innerHTML += `<div id='div${i}' style="${courseDivStyle}">`;
+        
+        const div = document.getElementById(`div${i}`);
+        div.appendChild(p);
+      } 
     });
 }
 
@@ -106,7 +123,7 @@ function showOptions(message, options, containerId) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent = "Advisor: " + message;
+  advisorMessage.innerHTML = `<pre style="font-family: 'Montserrat'">  Advisor: ${message}   </pre>`;
 
   var optionsContainer = document.getElementById(containerId);
   optionsContainer.innerHTML = "";
@@ -131,10 +148,6 @@ function handleUniversitySelection(selection) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent =
-    "Advisor: Thank you for providing your university information.";
-
-  chatMessages.appendChild(advisorMessage);
 
   showOptions("What is your major?", majorOptions, "major-options-container");
 }
@@ -143,8 +156,6 @@ function handleMajorSelection(selection) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent =
-    "Advisor: Thank you for providing your major information.";
 
   chatMessages.appendChild(advisorMessage);
 

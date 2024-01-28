@@ -4,9 +4,9 @@ const path = require("path");
 const app = express();
 const port = require("./server.json").port;
 const cors = require("cors");
-const x = require("../database/Texas A&M University.json");
 
 app.use(express.static("../public/pages/home"));
+app.use(express.static("../public/assets/"));
 app.use(cors());
 
 app.get('/', (req, res) => {

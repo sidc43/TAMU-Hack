@@ -19,7 +19,7 @@ We used html, css, javascript for front-end. And we used node.js for the back-en
 We ran into challenge when we had to show what classes student need to take in order to graduate from the .json file array and show it on the front-end. But eventually we managed to solve that by using fetch with get method.
 
 ## Accomplishments that we're proud of
-Even though two of are teammates are freshman and all members are new in working with node.js and javascript, we think that we did fantastic job to get the first prototype out in these short span of 24 hours. 
+Even though two of our teammates are freshman and all members are new in working with node.js and javascript, we think that we did fantastic job to get the first prototype out in these short span of 24 hours. 
 
 ## What we learned
 We learned how to work with node.js, how to connect node.js with front-end. We enjoyed working together even after just meeting two of our teammates for the first time this hackathon. We learned how to use git to collaborate on a team project and how using it makes things work easily and fluently.

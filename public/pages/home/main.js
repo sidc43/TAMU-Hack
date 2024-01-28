@@ -43,7 +43,7 @@ const courseDivStyle = `
   left: 70px;
   bottom: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 50px;
+  height: 60px;
   width: 500px;
   border-radius: 60px,
 `;
@@ -108,6 +108,7 @@ function getCollegeData() {
         const p = document.createElement("p");
         const text = document.createTextNode(data["courses"][i]["Course"] + " - " + data["courses"][i]["Desc"]);
         p.appendChild(text);
+        p.innerHTML += "<br>Credit Hours: " + data["courses"][i]["CredHrs"];
         container.innerHTML += `<div id='div${i}' style="${courseDivStyle}">`;
         
         const div = document.getElementById(`div${i}`);

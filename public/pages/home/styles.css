@@ -68,8 +68,10 @@ button {
 
 .user-message {
   color: #fff;
+  margin-bottom: 10px;
 }
 
 .advisor-message {
   color: hsla(213, 100%, 50%, 0.998);
+  margin-bottom: 10px;
 }

@@ -20,6 +20,25 @@ var yearOptions = ["Freshman", "Sophomore", "Junior", "Senior"];
 
 var currentStep = 0;
 
+// Add a new function to handle the 'Enter' key press
+function handleKeyPress(event) {
+  // Check if the pressed key is 'Enter' (key code 13)
+  if (event.keyCode === 13) {
+    // Call the 'sendMessage' function when 'Enter' key is pressed
+    sendMessage();
+  }
+}
+
+window.onload = function () {
+  showOptions(
+    "Which university are you from?",
+    universityOptions,
+    "university-options-container"
+  );
+  currentStep++;
+};
+
+// Update the 'sendMessage' function to include 'handleKeyPress' on 'Enter' key press
 function sendMessage() {
   var userInput = document.getElementById("input-text").value;
   if (userInput.trim() === "") return;
@@ -32,13 +51,6 @@ function sendMessage() {
   chatMessages.appendChild(userMessage);
 
   switch (currentStep) {
-    case 0:
-      showOptions(
-        "Which university are you from?",
-        universityOptions,
-        "university-options-container"
-      );
-      break;
     case 1:
       handleUniversitySelection(userInput);
       currentStep++;
@@ -68,21 +80,18 @@ function sendMessage() {
       break;
   }
 
-  currentStep++; // Incrementing currentStep outside the switch statement
-
+  currentStep++;
   document.getElementById("input-text").value = "";
 }
 
-function getCollegeData()
-{
+function getCollegeData() {
   fetch(`http://localhost:3000/college/${obj.name}/${obj.major}/${obj.year}`, {
-    method: "GET"
+    method: "GET",
   })
-  .then(res => res.json())
-  .then(data => {
-
-    console.log(data);
-  });
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
 
 function trimArray(array) {

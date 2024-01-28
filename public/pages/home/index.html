@@ -11,7 +11,14 @@
     <div id="chat-container">
       <div id="chat-messages"></div>
       <div id="user-input">
-        <input type="text" id="input-text" placeholder="Type your message..." />
+        <!-- Add an event listener for the 'keyup' event on the input field -->
+        <input
+          type="text"
+          id="input-text"
+          placeholder="Type your message..."
+          onkeyup="handleKeyPress(event)"
+        />
+        <!-- The 'onkeyup' attribute calls the 'handleKeyPress' function and passes the event -->
         <button id="send-button" onclick="sendMessage()">Send</button>
       </div>
 

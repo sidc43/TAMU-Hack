@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AdvisorGPT Chat</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Rubik&display=swap" rel="stylesheet">
     <script src="main.js"></script>
   </head>
   <body>
@@ -12,7 +15,16 @@
     <div id="chat-container">
       <div id="chat-messages"></div>
       <div id="user-input">
+<<<<<<< Updated upstream
         <input type="text" id="input-text" onkeyup="handleKeyPress(event)" />
+=======
+        <!-- Add an event listener for the 'keyup' event on the input field -->
+        <input
+          type="text"
+          id="input-text"
+          onkeyup="handleKeyPress(event)"
+        />
+>>>>>>> Stashed changes
       </div>
 
       <div id="university-options-container" class="options-container"></div>
@@ -20,6 +32,7 @@
       <div id="major-options-container" class="options-container"></div>
 
       <div id="year-options-container" class="options-container"></div>
+      <div id="creds">0</div>
     </div>
   </body>
 </html>

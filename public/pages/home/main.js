@@ -106,7 +106,7 @@ function showOptions(message, options, containerId) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent = "Advisor: " + message;
+  advisorMessage.innerHTML = `<pre style="font-family: 'Montserrat'">  Advisor: ${message} </pre>`;
 
   var optionsContainer = document.getElementById(containerId);
   optionsContainer.innerHTML = "";
@@ -131,10 +131,6 @@ function handleUniversitySelection(selection) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent =
-    "Advisor: Thank you for providing your university information.";
-
-  chatMessages.appendChild(advisorMessage);
 
   showOptions("What is your major?", majorOptions, "major-options-container");
 }
@@ -143,8 +139,6 @@ function handleMajorSelection(selection) {
   var chatMessages = document.getElementById("chat-messages");
   var advisorMessage = document.createElement("div");
   advisorMessage.className = "advisor-message";
-  advisorMessage.textContent =
-    "Advisor: Thank you for providing your major information.";
 
   chatMessages.appendChild(advisorMessage);
 

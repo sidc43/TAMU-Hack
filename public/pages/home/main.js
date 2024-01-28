@@ -39,8 +39,13 @@ window.onload = function () {
 };
 
 const courseDivStyle = `
-  background-color: black;
+  position: relative;
+  left: 70px;
+  bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
   height: 50px;
+  width: 500px;
+  border-radius: 60px,
 `;
 
 // Update the 'sendMessage' function to include 'handleKeyPress' on 'Enter' key press
@@ -101,7 +106,7 @@ function getCollegeData() {
       // TODO: loop through data, each iteration create a box for each class
       for (let i = 0; i < data["courses"].length; i++) {
         const p = document.createElement("p");
-        const text = document.createTextNode(data["courses"][i]["Course"]);
+        const text = document.createTextNode(data["courses"][i]["Course"] + " - " + data["courses"][i]["Desc"]);
         p.appendChild(text);
         container.innerHTML += `<div id='div${i}' style="${courseDivStyle}">`;
         
